@@ -29,6 +29,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.apache.commons.lang.StringUtils;
+import org.kohsuke.stapler.DataBoundConstructor;
 
 public class MesosSlave extends Slave {
 
@@ -41,6 +42,7 @@ public class MesosSlave extends Slave {
   private static final Logger LOGGER = Logger.getLogger(MesosSlave.class
       .getName());
 
+  @DataBoundConstructor
   public MesosSlave(MesosCloud cloud, String name, int numExecutors, MesosSlaveInfo slaveInfo) throws IOException, FormException {
     super(name,
           slaveInfo.getLabelString(), // node description.
